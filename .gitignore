@@ -1,0 +1,121 @@
+Output : 
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/text_color"
+        android:title="Text Color"
+        app:showAsAction="always|withText"
+        android:icon="@drawable/ic_palette_black_36dp"
+        android:orderInCategory="1"
+        >
+        <!-- Starting the text color sub menu which have three items-->
+        <menu>
+            <item
+                android:id="@+id/red"
+                android:title="Red"
+                android:icon="@drawable/ic_palette_red_36dp"
+                />
+            <item
+                android:id="@+id/green"
+                android:title="Green"
+                android:icon="@drawable/ic_palette_green_36dp"
+                />
+            <item
+                android:id="@+id/blue"
+                android:title="Blue"
+                android:icon="@drawable/ic_palette_blue_36dp"
+                />
+        </menu>
+    </item>
+
+
+
+<resources>
+
+    
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+
+         
+    </style>
+
+</resources>
+
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#FF0000</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000FF</color>
+</resources>
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I Love Racing"
+        android:textColor="#FF0000"
+        android:textSize="20sp" />
+
+</LinearLayout>
+
+
+
+
+
+package com.dj;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
+
+public class OverflowMenuBackgroundColor extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.android_overflow_menu_text_background_color);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_items, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.red:
+               
+                return true;
+
+            case R.id.green:
+                 
+                return true;
+
+            case R.id.blue:
+                 
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+}
